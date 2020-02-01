@@ -2,6 +2,9 @@ const API_URL = 'http://0.0.0.0:5000/search';
 const test = 'https://c.ndtvimg.com/2020-01/mtqb0nto_hyderabad-caa-protests-pti_625x300_06_January_20.jpg';
 const form = document.getElementById("form");
 const inputField = document.getElementById("img-url");
+const loading = document.querySelector(".loading");
+const alert = document.querySelector(".alert");
+const heatmap = document.querySelector("#cal-heatmap");
 let month = '', year = '', day = '';
 let dateArray = [];
 
@@ -45,6 +48,10 @@ const calculateDay = (element) => {
 };
 
 form.addEventListener("submit", (e) => {
+  alert.className = 'alert';
+  heatmap.innerHTML = '';
+  alert.innerHTML = '';
+  loading.style.display = 'block';
   dateArray = [];
   const formData = new FormData(form);
   const url = formData.get("img-url");
@@ -103,6 +110,21 @@ form.addEventListener("submit", (e) => {
           width: 10
         }
       });
+      loading.style.display = 'none';
+      // console.log((largest - smallest) / (60 * 60 * 24 * 30 * 1000));
+      const deltaMonths = (largest - smallest) / (60 * 60 * 24 * 30 * 1000);
+      if (deltaMonths > 8) {
+        alert.className += ' alert-danger';
+        alert.innerHTML += '<h4>Image is fake</h4>';
+      }
+      else if (deltaMonths >= 6) {
+        alert.className += ' alert-info';
+        alert.innerHTML += '<h4>Image may be fake</h4>';
+      }
+      else {
+        alert.className += ' alert-success';
+        alert.innerHTML += '<h4>Image may be legit</h4>';
+      }
     });
   e.preventDefault();
 });

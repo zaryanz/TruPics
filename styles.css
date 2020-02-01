@@ -51,3 +51,14 @@ img {
     margin-top: 5%;
 }
 
+.loading {
+    display: none;
+}
+
+.alert {
+    border-radius: 8px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
