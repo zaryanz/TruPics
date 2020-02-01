@@ -1,6 +1,7 @@
 const API_URL = 'http://0.0.0.0:5000/search';
 const test = 'https://c.ndtvimg.com/2020-01/mtqb0nto_hyderabad-caa-protests-pti_625x300_06_January_20.jpg';
 const form = document.getElementById("form");
+const inputField = document.getElementById("img-url");
 let month = '', year = '', day = '';
 let dateArray = [];
 
@@ -48,6 +49,7 @@ form.addEventListener("submit", (e) => {
   const formData = new FormData(form);
   const url = formData.get("img-url");
   console.log(url);
+  inputField.value = '';
   fetch('http://0.0.0.0:2000/', {
     method: 'POST',
     body: JSON.stringify({ url: url }),
@@ -73,7 +75,32 @@ form.addEventListener("submit", (e) => {
         }
       }
       console.log({ dates: dateArray });
+      let largest = dateArray[0];
+      let smallest = dateArray[0];
+      for (i = 0; i < dateArray.length; i++) {
+        if (dateArray[i] > largest) {
+          largest = dateArray[i];
+        }
+      }
+      for (i = 0; i < dateArray.length; i++) {
+        if (dateArray[i] < smallest) {
+          smallest = dateArray[i];
+        }
+      }
+      console.log(largest);
+      console.log(smallest);
+      var cal = new CalHeatMap();
+      cal.init({
+        highlight: dateArray,
+        start: smallest,
+        domain: 'year',
+        subDomain: 'month',
+        displayLegend: false,
+        cellSize: 25,
+        label: {
+          width: 10
+        }
+      });
     });
   e.preventDefault();
 });
-

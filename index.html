@@ -10,10 +10,19 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
     <title>Hackdoomna</title>
 </head>
 
 <body>
+    <div class="main">
+        <div class="image"><img src="./logo.jpeg" alt="Logo"></div>
+        <div class="heading">
+            <h3>Debunking <strong>FAKE</strong> news...</h3>
+        </div>
+    </div>
     <div class="card">
         <div class="card-body">
             <form id="form">
@@ -25,6 +34,13 @@
             </form>
         </div>
     </div>
+    <div class="card">
+        <div class="card-body" style="width:100%;">
+            <h3>Results</h3>
+            <div id="cal-heatmap"></div>
+            <!-- <script type="text/javascript">
+            </script> -->
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

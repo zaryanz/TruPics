@@ -29,3 +29,25 @@ body {
     font-size: medium;
     font-family: 'Open Sans', sans-serif;
 }
+
+/* img {
+    margin-left: 43%;
+    padding: 0;
+} */
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.heading {
+    margin: 0 auto;
+    padding-top: 5%;
+    margin-left: 27%;
+}
+
+img {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
