@@ -1,0 +1,3 @@
+[console_scripts]
+htmldate = htmldate.cli:main
+

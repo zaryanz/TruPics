@@ -1,0 +1,31 @@
+body {
+    background-color: #E8E8E8;
+    font-family: 'Montserrat', sans-serif;
+}
+.card {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 8px;
+}
+
+.btn {
+    margin-top: 8px;
+    font-size: 1.15em;
+}
+
+.btn-primary {
+    background-color: #009688;
+    border-color: #009688;
+}
+
+.btn-primary:hover {
+    background-color: #00796b;
+    border-color: #00796b;
+}
+
+
+::placeholder {
+    font-size: medium;
+    font-family: 'Open Sans', sans-serif;
+}
