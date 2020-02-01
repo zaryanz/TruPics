@@ -96,7 +96,9 @@ form.addEventListener("submit", (e) => {
         domain: 'year',
         subDomain: 'month',
         displayLegend: false,
-        cellSize: 25,
+        cellSize: 20,
+        range: 7,
+        colLimit: 5,
         label: {
           width: 10
         }
