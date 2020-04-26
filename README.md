@@ -1,7 +1,7 @@
 # TruPics
 
 ## About
-An app that let's you know if an image is a recent viral news or an old one, and hence helps you decide which news is real and which is fake. 
+An app that let's you know if an image is a recent viral news or an old one, and hence helps you decide which news is real and which is fake. Built for the HackDoomna Hackathon '20 at IIIT-DM Jabalpur
 
 
 ## Screenshots
